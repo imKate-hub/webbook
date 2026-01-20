@@ -1,9 +1,8 @@
+import { Upload, X } from 'lucide-react';
 import React, { useState } from 'react';
-import { Book, MainCategory, SubCategory } from '../types';
 import { CATEGORIES } from '../constants';
+import { Book, MainCategory, SubCategory } from '../types';
 import { Button } from './Button';
-import { generateBookReview } from '../services/geminiService';
-import { X, Sparkles, Upload } from 'lucide-react';
 
 interface AdminPanelProps {
   onClose: () => void;
@@ -30,16 +29,16 @@ export const AdminPanel: React.FC<AdminPanelProps> = ({ onClose, onAddBook }) =>
     }
   };
 
-  const handleGenerateAI = async () => {
-    if (!title || !author) {
-      alert("Vui lòng nhập Tên sách và Tác giả trước khi dùng AI.");
-      return;
-    }
-    setIsGenerating(true);
-    const review = await generateBookReview(title, author);
-    setContent(review);
-    setIsGenerating(false);
-  };
+  // const handleGenerateAI = async () => {
+  //   if (!title || !author) {
+  //     alert("Vui lòng nhập Tên sách và Tác giả trước khi dùng AI.");
+  //     return;
+  //   }
+  //   setIsGenerating(true);
+  //   const review = await generateBookReview(title, author);
+  //   setContent(review);
+  //   setIsGenerating(false);
+  // };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -157,7 +156,7 @@ export const AdminPanel: React.FC<AdminPanelProps> = ({ onClose, onAddBook }) =>
             <div>
               <div className="flex justify-between items-center mb-2">
                 <label className="text-sm font-medium text-zinc-400">Nội dung Review</label>
-                <button 
+                {/* <button 
                   type="button"
                   onClick={handleGenerateAI}
                   disabled={isGenerating}
@@ -165,7 +164,7 @@ export const AdminPanel: React.FC<AdminPanelProps> = ({ onClose, onAddBook }) =>
                 >
                   <Sparkles size={14} />
                   {isGenerating ? 'Đang viết...' : 'Viết bằng AI (Gemini)'}
-                </button>
+                </button> */}
               </div>
               <textarea 
                 required
