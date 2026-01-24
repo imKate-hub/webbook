@@ -16,7 +16,7 @@ const allowedOrigins = [
   'http://localhost:5173', // Cho Vite dev
   'https://www.imkate.id.vn',  
   'https://imkate.id.vn',
-].filter(Boolean) as string[];
+].filter(Boolean);
 
 // Fixed: Removed manual RequestHandler cast which was causing "No overload matches this call" error.
 // The types from the cors package are compatible with app.use() natively.
