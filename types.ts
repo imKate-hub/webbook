@@ -1,29 +1,36 @@
-export enum MainCategory {
-  LITERATURE = 'Văn học',
-  SELF_HELP = 'Self-help / Phát triển bản thân',
-  BUSINESS = 'Kinh tế – Kỹ năng – Kinh doanh'
-}
-
-export type SubCategory = string;
-
-export interface CategoryStructure {
-  name: MainCategory;
-  subCategories: SubCategory[];
-  icon: string;
-  description: string;
+export enum BookCategory {
+  SelfHelp = "Phát triển bản thân",
+  Literature = "Văn học",
+  EconomicsBusiness = "Kinh tế & Kinh doanh",
+  Philosophy = "Triết học"
 }
 
 export interface Book {
-  id: string;
+  _id?: string; // MongoDB sử dụng _id
+  id?: string;  // Giữ lại để tương thích ngược
   title: string;
   author: string;
-  category: MainCategory;
-  subCategory: SubCategory;
+  category: BookCategory;
   coverUrl: string;
+  summary: string;
   content: string;
-  rating: number; // 1-5
-  createdAt: number;
-  summary?: string; // AI Generated summary
+  isFeatured: boolean;
+  dateAdded: string;
 }
 
-export type TabView = 'home' | 'blog' | 'personal' | 'youtube' | 'english';
+export interface SiteConfig {
+  _id?: string;
+  siteName: string;
+  heroTopText: string;
+  heroMainText: string;
+  heroSubText: string;
+  heroImageUrl: string;
+  themeColor: string;
+}
+
+export interface AppState {
+  books: Book[];
+  config: SiteConfig;
+  isLoading: boolean;
+  error: string | null;
+}

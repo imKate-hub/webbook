@@ -1,4 +1,5 @@
 {
   "name": "Read with Kate",
-  "description": "A stylish, dark-themed book review blog featuring literature, self-help, and business categories with AI-assisted content generation."
+  "description": "A sophisticated book review platform featuring a dark aesthetic, blog capabilities, and an admin content management system.",
+  "requestFramePermissions": []
 }

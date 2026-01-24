@@ -1,53 +1,66 @@
 import React from 'react';
-import { Book } from '../types';
-import { Star, BookOpen } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { Book, SiteConfig } from '../types';
+import { ArrowRight } from 'lucide-react';
 
 interface BookCardProps {
   book: Book;
-  onClick: (book: Book) => void;
+  config?: SiteConfig;
 }
 
-export const BookCard: React.FC<BookCardProps> = ({ book, onClick }) => {
+const BookCard: React.FC<BookCardProps> = ({ book, config }) => {
+  const themeColor = config?.themeColor || '#f97316';
+
   return (
-    <div 
-      className="group bg-kate-dark border border-zinc-800 rounded-xl overflow-hidden hover:border-kate-orange/50 transition-all duration-300 hover:shadow-2xl hover:shadow-kate-orange/10 cursor-pointer flex flex-col h-full"
-      onClick={() => onClick(book)}
+    <div className="group flex flex-col bg-brand-dark rounded-xl overflow-hidden border border-neutral-800 transition-all duration-300 hover:shadow-lg"
+         style={{ borderColor: 'rgba(38,38,38,1)' }} // Default border
+         onMouseEnter={(e) => {
+           e.currentTarget.style.borderColor = themeColor;
+           e.currentTarget.style.boxShadow = `0 0 20px ${themeColor}20`; // 20 hex = low opacity
+         }}
+         onMouseLeave={(e) => {
+           e.currentTarget.style.borderColor = 'rgba(38,38,38,1)';
+           e.currentTarget.style.boxShadow = 'none';
+         }}
     >
-      <div className="relative aspect-[2/3] overflow-hidden bg-zinc-900">
+      <div className="relative aspect-[2/3] overflow-hidden">
         <img 
           src={book.coverUrl} 
           alt={book.title} 
-          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 opacity-90 group-hover:opacity-100"
-          loading="lazy"
+          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
         />
-        <div className="absolute top-2 right-2 bg-black/70 backdrop-blur-md px-2 py-1 rounded-md flex items-center gap-1 text-kate-orange text-sm font-bold border border-white/10">
-          <Star size={12} fill="currentColor" />
-          {book.rating}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+           <span 
+             className="text-white text-xs font-bold uppercase tracking-wider px-2 py-1 rounded"
+             style={{ backgroundColor: themeColor }}
+           >
+             {book.category}
+           </span>
         </div>
       </div>
       
-      <div className="p-4 flex flex-col flex-grow">
-        <div className="text-xs text-kate-orange font-medium mb-1 tracking-wider uppercase truncate">
-          {book.subCategory}
+      <div className="p-5 flex flex-col flex-grow">
+        <div className="mb-2">
+           <p className="text-xs font-medium uppercase tracking-wide mb-1" style={{ color: themeColor }}>{book.author}</p>
+           <h3 className="font-serif text-xl text-white leading-tight transition-colors group-hover:text-white">
+             {book.title}
+           </h3>
         </div>
-        <h3 className="text-xl font-serif font-bold text-white mb-1 leading-tight group-hover:text-kate-orange transition-colors">
-          {book.title}
-        </h3>
-        <p className="text-zinc-400 text-sm mb-4 italic">by {book.author}</p>
         
-        <p className="text-zinc-500 text-sm line-clamp-3 mb-4 flex-grow">
-          {book.content}
+        <p className="text-neutral-400 text-sm line-clamp-3 mb-6 flex-grow">
+          {book.summary}
         </p>
 
-        <div className="pt-4 border-t border-zinc-800 flex items-center justify-between mt-auto">
-          <span className="text-xs text-zinc-600">
-            {new Date(book.createdAt).toLocaleDateString('vi-VN')}
-          </span>
-          <span className="text-xs text-zinc-400 flex items-center gap-1 group-hover:text-white transition-colors">
-            Đọc review <BookOpen size={12} />
-          </span>
-        </div>
+        <Link 
+          to={`/blog`} 
+          className="inline-flex items-center text-sm font-semibold text-white transition-colors mt-auto group-hover:underline"
+          style={{ textDecorationColor: themeColor }}
+        >
+          Đọc Bài Viết <ArrowRight size={16} className="ml-1 transition-transform group-hover:translate-x-1" />
+        </Link>
       </div>
     </div>
   );
 };
+
+export default BookCard;

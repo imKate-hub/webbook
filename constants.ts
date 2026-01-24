@@ -1,75 +1,53 @@
-import { Book, CategoryStructure, MainCategory } from './types';
+import { Book, BookCategory, SiteConfig } from './types';
 
-export const CATEGORIES: CategoryStructure[] = [
-  {
-    name: MainCategory.LITERATURE,
-    description: "Khám phá vẻ đẹp của ngôn từ và cảm xúc.",
-    icon: "feather",
-    subCategories: [
-      "Tiểu thuyết",
-      "Truyện ngắn",
-      "Tản văn",
-      "Thơ",
-      "Truyện kinh điển"
-    ]
-  },
-  {
-    name: MainCategory.SELF_HELP,
-    description: "Hành trình hoàn thiện bản thân mỗi ngày.",
-    icon: "sprout",
-    subCategories: [
-      "Sách tư duy (mindset)",
-      "Thói quen",
-      "Kỹ năng sống",
-      "Định hướng cuộc đời"
-    ]
-  },
-  {
-    name: MainCategory.BUSINESS,
-    description: "Kiến thức thực chiến cho sự nghiệp.",
-    icon: "briefcase",
-    subCategories: [
-      "Kinh doanh",
-      "Tài chính cá nhân",
-      "Marketing",
-      "Quản lý",
-      "Khởi nghiệp"
-    ]
-  }
-];
+export const DEFAULT_SITE_CONFIG: SiteConfig = {
+  siteName: "Read with Kate",
+  heroTopText: "Welcome to my world",
+  heroMainText: "Read with Kate",
+  heroSubText: "Nơi lưu giữ những trang sách hay, những câu chuyện về sự trưởng thành và hành trình khám phá bản thân.",
+  heroImageUrl: "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?q=80&w=2456&auto=format&fit=crop",
+  themeColor: "#f97316" // Default Orange
+};
 
 export const INITIAL_BOOKS: Book[] = [
   {
     id: '1',
-    title: 'Nhà Giả Kim',
-    author: 'Paulo Coelho',
-    category: MainCategory.LITERATURE,
-    subCategory: 'Tiểu thuyết',
-    coverUrl: 'https://picsum.photos/300/450?random=1',
-    content: 'Một cuốn sách kinh điển về việc theo đuổi ước mơ. Câu chuyện về chàng chăn cừu Santiago đã truyền cảm hứng cho hàng triệu độc giả trên toàn thế giới...',
-    rating: 5,
-    createdAt: Date.now()
+    title: 'Atomic Habits',
+    author: 'James Clear',
+    category: BookCategory.SelfHelp,
+    coverUrl: 'https://picsum.photos/seed/atomic/400/600',
+    summary: 'Cách dễ dàng và đã được chứng minh để xây dựng thói quen tốt và phá bỏ thói quen xấu.',
+    content: 'Atomic Habits cung cấp một khuôn khổ để cải thiện mỗi ngày. James Clear tiết lộ những chiến lược thực tế sẽ dạy bạn chính xác cách hình thành thói quen tốt, phá bỏ thói quen xấu và làm chủ những hành vi nhỏ dẫn đến kết quả vượt trội. Cuốn sách này là tài liệu phải đọc cho bất kỳ ai muốn tối ưu hóa cuộc sống của mình thông qua những thay đổi nhỏ, nhất quán.',
+    isFeatured: true,
+    dateAdded: '2023-10-15'
   },
   {
     id: '2',
-    title: 'Đắc Nhân Tâm',
-    author: 'Dale Carnegie',
-    category: MainCategory.SELF_HELP,
-    subCategory: 'Kỹ năng sống',
-    coverUrl: 'https://picsum.photos/300/450?random=2',
-    content: 'Nghệ thuật thu phục lòng người. Cuốn sách không chỉ dạy cách giao tiếp mà còn dạy cách sống tử tế và quan tâm đến người khác.',
-    rating: 4.5,
-    createdAt: Date.now() - 100000
+    title: 'The Great Gatsby',
+    author: 'F. Scott Fitzgerald',
+    category: BookCategory.Literature,
+    coverUrl: 'https://picsum.photos/seed/gatsby/400/600',
+    summary: 'Câu chuyện về triệu phú bí ẩn Jay Gatsby và tình yêu của ông dành cho Daisy Buchanan xinh đẹp.',
+    content: 'Lấy bối cảnh Thời đại Jazz trên Long Island, cuốn tiểu thuyết mô tả những tương tác của người kể chuyện với triệu phú bí ẩn Jay Gatsby và nỗi ám ảnh của Gatsby muốn tái hợp với người tình cũ, Daisy Buchanan. Nó khám phá các chủ đề về sự suy đồi, chủ nghĩa lý tưởng, sự chống lại thay đổi, biến động xã hội và sự dư thừa.',
+    isFeatured: true,
+    dateAdded: '2023-11-01'
   },
   {
     id: '3',
-    title: 'Cha Giàu Cha Nghèo',
-    author: 'Robert Kiyosaki',
-    category: MainCategory.BUSINESS,
-    subCategory: 'Tài chính cá nhân',
-    coverUrl: 'https://picsum.photos/300/450?random=3',
-    content: 'Thay đổi tư duy về tiền bạc. Cuốn sách giải thích sự khác biệt cơ bản trong tư duy tài chính giữa người giàu và người nghèo.',
-    rating: 5,
-    createdAt: Date.now() - 200000
+    title: 'Thinking, Fast and Slow',
+    author: 'Daniel Kahneman',
+    category: BookCategory.EconomicsBusiness,
+    coverUrl: 'https://picsum.photos/seed/thinking/400/600',
+    summary: 'Cuốn sách bán chạy nhất giải thích hai hệ thống điều khiển cách chúng ta suy nghĩ.',
+    content: 'Kahneman đưa chúng ta vào một chuyến tham quan đột phá về tâm trí và giải thích hai hệ thống điều khiển cách chúng ta suy nghĩ. Hệ thống 1 nhanh, trực quan và cảm xúc; Hệ thống 2 chậm hơn, cân nhắc hơn và logic hơn. Hiểu những hệ thống này có thể cải thiện khả năng ra quyết định của chúng ta trong kinh doanh và cuộc sống.',
+    isFeatured: false,
+    dateAdded: '2023-12-10'
   }
+];
+
+export const NAV_LINKS = [
+  { name: 'Home', path: '/' },
+  { name: 'Explore Book Blog', path: '/blog' },
+  { name: 'About Kate', path: '/about' },
+  { name: 'YouTube', path: '/youtube' },
 ];
