@@ -2,7 +2,7 @@ import { Book, SiteConfig } from '../types';
 
 // Trong môi trường production, chúng ta sẽ sử dụng URL từ Render thông qua biến môi trường
 // Lưu ý: Trên Vercel, bạn cần thêm biến VITE_API_URL hoặc API_BASE_URL trong Settings
-const API_BASE_URL = ('https://readwithkate.onrender.com') + '/api';
+const API_BASE_URL = (process.env.API_BASE_URL || 'http://localhost:5000') + '/api';
 
 export const api = {
   // Sách

@@ -1,9 +1,11 @@
+
 import React, { useState, useEffect } from 'react';
 import { HashRouter as Router, Routes, Route, useLocation, Navigate } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
 import Blog from './pages/Blog';
+import BookDetail from './pages/BookDetail';
 import About from './pages/About';
 import Admin from './pages/Admin';
 import Login from './pages/Login';
@@ -21,7 +23,13 @@ const ScrollToTop = () => {
   return null;
 };
 
-const ProtectedRoute = ({ isAuthenticated, children }: { isAuthenticated: boolean, children: React.ReactNode }) => {
+// Fixed: Explicitly typed ProtectedRoute and its props to resolve the TypeScript error where 'children' were not being recognized correctly in the JSX context.
+interface ProtectedRouteProps {
+  isAuthenticated: boolean;
+  children: React.ReactNode;
+}
+
+const ProtectedRoute: React.FC<ProtectedRouteProps> = ({ isAuthenticated, children }) => {
   if (!isAuthenticated) return <Navigate to="/login" replace />;
   return <>{children}</>;
 };
@@ -113,6 +121,7 @@ const App: React.FC = () => {
         <Routes>
           <Route path="/" element={<Home books={books} config={siteConfig} />} />
           <Route path="/blog" element={<Blog books={books} config={siteConfig} />} />
+          <Route path="/blog/:id" element={<BookDetail books={books} config={siteConfig} />} />
           <Route path="/about" element={<About config={siteConfig} />} />
           <Route path="/youtube" element={<YoutubePlaceholder config={siteConfig} />} />
           <Route path="/login" element={<Login onLogin={handleLogin} />} />

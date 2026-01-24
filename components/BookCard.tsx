@@ -10,13 +10,14 @@ interface BookCardProps {
 
 const BookCard: React.FC<BookCardProps> = ({ book, config }) => {
   const themeColor = config?.themeColor || '#f97316';
+  const bookId = book._id || book.id;
 
   return (
     <div className="group flex flex-col bg-brand-dark rounded-xl overflow-hidden border border-neutral-800 transition-all duration-300 hover:shadow-lg"
-         style={{ borderColor: 'rgba(38,38,38,1)' }} // Default border
+         style={{ borderColor: 'rgba(38,38,38,1)' }}
          onMouseEnter={(e) => {
            e.currentTarget.style.borderColor = themeColor;
-           e.currentTarget.style.boxShadow = `0 0 20px ${themeColor}20`; // 20 hex = low opacity
+           e.currentTarget.style.boxShadow = `0 0 20px ${themeColor}20`;
          }}
          onMouseLeave={(e) => {
            e.currentTarget.style.borderColor = 'rgba(38,38,38,1)';
@@ -52,7 +53,7 @@ const BookCard: React.FC<BookCardProps> = ({ book, config }) => {
         </p>
 
         <Link 
-          to={`/blog`} 
+          to={`/blog/${bookId}`} 
           className="inline-flex items-center text-sm font-semibold text-white transition-colors mt-auto group-hover:underline"
           style={{ textDecorationColor: themeColor }}
         >

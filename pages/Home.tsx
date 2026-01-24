@@ -64,11 +64,11 @@ const Home: React.FC<HomeProps> = ({ books, config }) => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
              <div className="bg-brand-dark p-8 rounded-2xl border border-neutral-800 text-center hover:border-opacity-100 transition-colors"
-                  style={{ borderColor: 'rgba(64,64,64,0.5)' }} // Default border
+                  style={{ borderColor: 'rgba(64,64,64,0.5)' }}
              >
                 <div 
                   className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6"
-                  style={{ backgroundColor: `${config.themeColor}15`, color: config.themeColor }} // 15 is hex opacity
+                  style={{ backgroundColor: `${config.themeColor}15`, color: config.themeColor }}
                 >
                   <BookOpenCheck size={32} />
                 </div>
@@ -125,7 +125,7 @@ const Home: React.FC<HomeProps> = ({ books, config }) => {
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {featuredBooks.map(book => (
-                <BookCard key={book.id} book={book} config={config} />
+                <BookCard key={book._id || book.id} book={book} config={config} />
               ))}
             </div>
             
@@ -149,10 +149,10 @@ const Home: React.FC<HomeProps> = ({ books, config }) => {
              Mới Lên Kệ
            </h2>
            <div className="space-y-8">
-             {recentBooks.map((book) => (
-               <Link to="/blog" key={book.id} className="group flex items-center justify-between border-b border-neutral-800 pb-8 hover:border-neutral-600 transition-colors">
+             {recentBooks.map((book, idx) => (
+               <Link to={`/blog/${book._id || book.id}`} key={book._id || book.id} className="group flex items-center justify-between border-b border-neutral-800 pb-8 hover:border-neutral-600 transition-colors">
                  <div className="flex items-center space-x-6">
-                    <span className="text-sm font-mono opacity-50" style={{ color: config.themeColor }}>0{book.id}</span>
+                    <span className="text-sm font-mono opacity-50" style={{ color: config.themeColor }}>0{idx + 1}</span>
                     <div>
                       <h3 className="text-xl md:text-2xl text-white font-serif transition-colors"
                           onMouseEnter={(e) => e.currentTarget.style.color = config.themeColor}

@@ -7,17 +7,15 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 const app = express();
-const PORT = 5000;
-const MONGODB_URI = "mongodb+srv://buithutrangptit_db_user:0pskPI5bIULzjppH@imkate.tsty3ki.mongodb.net/?appName=imkate";
+const PORT = process.env.PORT || 5000;
+const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/readwithkate';
 
 // Cấu hình CORS - Cho phép domain của Vercel truy cập
 const allowedOrigins = [
   'http://localhost:3000', // Cho môi trường dev
   'http://localhost:5173', // Cho Vite dev
-  'https://www.imkate.id.vn',  
-  'https://imkate.id.vn',
-  'https://webbook-two.vercel.app',
-].filter(Boolean);
+  process.env.FRONTEND_URL  // URL Vercel của bạn (cấu hình trong Environment Variables trên Render)
+].filter(Boolean) as string[];
 
 // Fixed: Removed manual RequestHandler cast which was causing "No overload matches this call" error.
 // The types from the cors package are compatible with app.use() natively.
