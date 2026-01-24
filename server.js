@@ -8,7 +8,7 @@ dotenv.config();
 
 const app = express();
 const PORT = 5000;
-const MONGODB_URI = 'mongodb+srv://buithutrangptit_db_user:0pskPI5bIULzjppH@imkate.tsty3ki.mongodb.net/' || 'mongodb://localhost:27017/readwithkate';
+const MONGODB_URI = "mongodb+srv://buithutrangptit_db_user:0pskPI5bIULzjppH@imkate.tsty3ki.mongodb.net/?appName=imkate";
 
 // Cấu hình CORS - Cho phép domain của Vercel truy cập
 const allowedOrigins = [
