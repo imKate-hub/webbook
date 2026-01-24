@@ -16,6 +16,7 @@ const allowedOrigins = [
   'http://localhost:5173', // Cho Vite dev
   'https://www.imkate.id.vn',  
   'https://imkate.id.vn',
+  'https://webbook-two.vercel.app',
 ].filter(Boolean);
 
 // Fixed: Removed manual RequestHandler cast which was causing "No overload matches this call" error.
