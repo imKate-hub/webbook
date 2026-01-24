@@ -14,7 +14,8 @@ const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/readwi
 const allowedOrigins = [
   'http://localhost:3000', // Cho môi trường dev
   'http://localhost:5173', // Cho Vite dev
-  process.env.FRONTEND_URL  // URL Vercel của bạn (cấu hình trong Environment Variables trên Render)
+  process.env.FRONTEND_URL,  // URL Vercel của bạn (cấu hình trong Environment Variables trên Render)
+  process.env.FRONTEND_URL_BACKUP,  // URL Vercel của bạn (cấu hình trong Environment Variables trên Render)
 ].filter(Boolean) as string[];
 
 // Fixed: Removed manual RequestHandler cast which was causing "No overload matches this call" error.
