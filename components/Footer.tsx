@@ -31,7 +31,7 @@ const Footer: React.FC<FooterProps> = ({ config }) => {
             <div className="flex flex-col space-y-2 items-center md:items-start text-neutral-300 text-sm">
               <a href="mailto:kate@example.com" className="flex items-center space-x-2 hover:text-white transition-colors">
                 <Mail size={16} />
-                <span>hello@{config.siteName.toLowerCase().replace(/\s/g, '')}.com</span>
+                <span>buithutrang.ptit@gmail.com</span>
               </a>
               <span className="flex items-center space-x-2">
                  <span>Hà Nội, Việt Nam</span>
@@ -48,7 +48,7 @@ const Footer: React.FC<FooterProps> = ({ config }) => {
                Theo Dõi Mình
              </h4>
              <div className="flex justify-center md:justify-start space-x-6">
-                <a href="#" className="text-neutral-400 hover:text-white transition-colors">
+                <a href="https://www.instagram.com/imkate.mz/" className="text-neutral-400 hover:text-white transition-colors">
                   <Instagram size={24} />
                 </a>
                 <a href="/youtube" className="text-neutral-400 hover:text-white transition-colors">
