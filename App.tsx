@@ -14,7 +14,10 @@ import { Book, SiteConfig } from './types';
 import { api } from './services/api';
 import { DEFAULT_SITE_CONFIG } from './constants';
 import { Loader2 } from 'lucide-react';
+import ReactGA from "react-ga4";
+import GAListener from './GAListener';
 
+ReactGA.initialize("G-GHV8HZFX9W");
 const ScrollToTop = () => {
   const { pathname } = useLocation();
   useEffect(() => {
@@ -115,6 +118,7 @@ const App: React.FC = () => {
 
   return (
     <Router>
+      <GAListener />
       <ScrollToTop />
       <div className="bg-brand-black min-h-screen text-neutral-200 font-sans selection:bg-brand-orange selection:text-white">
         <Navbar config={siteConfig} />
