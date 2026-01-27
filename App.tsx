@@ -17,7 +17,7 @@ import { Loader2 } from 'lucide-react';
 import ReactGA from "react-ga4";
 import GAListener from './GAListener';
 
-ReactGA.initialize("G-BL18SPP5TB");
+ReactGA.initialize("G-GHV8HZFX9W");
 const ScrollToTop = () => {
   const { pathname } = useLocation();
   useEffect(() => {
