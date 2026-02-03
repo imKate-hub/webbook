@@ -96,7 +96,7 @@ const Home: React.FC<HomeProps> = ({ books, config }) => {
                 >
                   <Coffee size={32} />
                 </div>
-                <h3 className="font-serif text-xl text-white mb-4">Cộng Đồng</h3>
+                <h3 className="font-serif text-xl text-white mb-4">Phương pháp đọc hiệu quả</h3>
                 <p className="text-neutral-400 text-sm leading-relaxed">
                   Tham gia cộng đồng của những người đọc chậm và nghĩ sâu. Hãy cùng thảo luận về những ý tưởng quan trọng.
                 </p>

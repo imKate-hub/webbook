@@ -2,7 +2,7 @@ export enum BookCategory {
   SelfHelp = "Phát triển bản thân",
   Literature = "Văn học",
   EconomicsBusiness = "Kinh tế & Kinh doanh",
-  Philosophy = "Triết học"
+  // Philosophy = "Triết học"
 }
 
 export interface Book {
