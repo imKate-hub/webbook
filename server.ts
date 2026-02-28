@@ -20,18 +20,22 @@ const allowedOrigins = [
 
 // Fixed: Removed manual RequestHandler cast which was causing "No overload matches this call" error.
 // The types from the cors package are compatible with app.use() natively.
+// app.use(cors({
+//   origin: (origin, callback) => {
+//     // Cho phép các request không có origin (như Postman hoặc mobile apps)
+//     if (!origin) return callback(null, true);
+//     if (allowedOrigins.indexOf(origin) === -1) {
+//       const msg = 'Chính sách CORS của server này không cho phép truy cập từ origin: ' + origin;
+//       return callback(new Error(msg), false);
+//     }
+//     return callback(null, true);
+//   },
+//   credentials: true
+// }));
+
 app.use(cors({
-  origin: (origin, callback) => {
-    // Cho phép các request không có origin (như Postman hoặc mobile apps)
-    if (!origin) return callback(null, true);
-    if (allowedOrigins.indexOf(origin) === -1) {
-      const msg = 'Chính sách CORS của server này không cho phép truy cập từ origin: ' + origin;
-      return callback(new Error(msg), false);
-    }
-    return callback(null, true);
-  },
-  credentials: true
-}));
+  origin: '*'
+}))
 
 // Fixed: Removed manual RequestHandler cast which was causing "No overload matches this call" error.
 app.use(express.json());
