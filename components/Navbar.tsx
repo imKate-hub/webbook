@@ -61,9 +61,10 @@ const Navbar: React.FC<NavbarProps> = ({ config }) => {
                 {link.name}
               </Link>
             ))}
+           {/* 
             <Link to="/admin" className="text-neutral-600 hover:text-neutral-400 transition-colors">
               <Settings size={18} />
-            </Link>
+            </Link>/*}
           </div>
 
           {/* Mobile Menu Button */}

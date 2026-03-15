@@ -14,12 +14,7 @@ const Login: React.FC<LoginProps> = ({ onLogin }) => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // Simple hardcoded password for demonstration
-    if (password === 'kate123') {
-      onLogin(true);
-      navigate('/admin');
-    } else {
-      setError('Mật khẩu không đúng. Truy cập bị từ chối.');
-    }
+   
   };
 
   return (
