@@ -1,12 +1,14 @@
 import React from "react";
 import { Instagram, Youtube } from "lucide-react";
 import { SiteConfig } from "../types";
+import kate from '../assets/images/kate.jpg'
 
 interface AboutProps {
   config: SiteConfig;
 }
 
 const About: React.FC<AboutProps> = ({ config }) => {
+
   return (
     <div className="min-h-screen bg-brand-black pt-32 pb-20">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -18,7 +20,8 @@ const About: React.FC<AboutProps> = ({ config }) => {
               style={{ backgroundColor: config.themeColor }}
             ></div>
             <img
-              src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?q=80&w=1000&auto=format&fit=crop"
+              // src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?q=80&w=1000&auto=format&fit=crop"
+              src={kate}
               alt="Kate reading"
               className="relative z-10 w-full rounded-lg shadow-2xl grayscale hover:grayscale-0 transition-all duration-700"
             />
