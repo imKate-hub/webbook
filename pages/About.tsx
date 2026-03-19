@@ -50,54 +50,53 @@ const About: React.FC<AboutProps> = ({ config }) => {
                 bắt đầu duy trì thói quen đọc sách, dù không phải lúc nào cũng
                 dễ dàng.
               </p>
-              <p>
-                Website này được mình tạo ra như một không gian nhỏ để lưu lại
-                hành trình thay đổi của bản thân. Sau mỗi cuốn sách, mình viết
-                lại cảm nhận, những điều khiến mình ấn tượng và những bài học
-                mình rút ra. Mình hy vọng những chia sẻ này có thể giúp bạn hiểu
-                nhanh nội dung sách và tìm được cuốn phù hợp với mình.
-              </p>
-              <p>
-                Ở đây, mình thường review các thể loại như sách phát triển bản
-                thân, hồi ký, kinh tế và sách truyền cảm hứng. Những bài viết
-                không mang tính học thuật, mà chỉ đơn giản là góc nhìn cá nhân
-                của mình – một người từng không thích đọc sách nhưng đang cố
-                gắng duy trì thói quen này mỗi ngày.
-              </p>
-              <p>
-                Mình vẫn rất thích nghe podcast và xem video, nhưng mình tin
-                rằng đọc sách là một cách khác để hiểu thế giới sâu sắc hơn. Và
-                nếu bạn cũng giống mình trước đây – từng ngại đọc sách – thì hy
-                vọng bạn sẽ tìm thấy một chút động lực khi ghé thăm website này.
-              </p>
-              <p>
-                Rất vui nếu được đồng hành cùng bạn trên hành trình đọc sách
-              </p>
             </div>
+          </div>
+        </div>
+        <div className='mt-3'>
+          <div className="text-neutral-300 space-y-4 leading-relaxed font-light text-lg">
+            <p>
+              Website này được mình tạo ra như một không gian nhỏ để lưu lại
+              hành trình thay đổi của bản thân. Sau mỗi cuốn sách, mình viết lại
+              cảm nhận, những điều khiến mình ấn tượng và những bài học mình rút
+              ra. Mình hy vọng những chia sẻ này có thể giúp bạn hiểu nhanh nội
+              dung sách và tìm được cuốn phù hợp với mình.
+            </p>
+            <p>
+              Ở đây, mình thường review các thể loại như sách phát triển bản
+              thân, hồi ký, kinh tế và sách truyền cảm hứng. Những bài viết
+              không mang tính học thuật, mà chỉ đơn giản là góc nhìn cá nhân của
+              mình – một người từng không thích đọc sách nhưng đang cố gắng duy
+              trì thói quen này mỗi ngày.
+            </p>
+            <p>
+              Mình vẫn rất thích nghe podcast và xem video, nhưng mình tin rằng
+              đọc sách là một cách khác để hiểu thế giới sâu sắc hơn. Và nếu bạn
+              cũng giống mình trước đây – từng ngại đọc sách – thì hy vọng bạn
+              sẽ tìm thấy một chút động lực khi ghé thăm website này.
+            </p>
+            <p>Rất vui nếu được đồng hành cùng bạn trên hành trình đọc sách</p>
+          </div>
 
-            <div className="pt-8">
-              <h3
-                className="text-sm uppercase tracking-widest font-bold mb-4"
-                style={{ color: config.themeColor }}
-              >
-                Kết nối với mình
-              </h3>
-              <div className="flex space-x-4">
-                {/* <button className="flex items-center space-x-2 text-white bg-neutral-800 px-4 py-2 rounded-full hover:bg-neutral-700 transition-colors">
+          <div className="pt-8">
+            <h3
+              className="text-sm uppercase tracking-widest font-bold mb-4"
+              style={{ color: config.themeColor }}
+            >
+              Kết nối với mình
+            </h3>
+            <div className="flex space-x-4">
+              {/* <button className="flex items-center space-x-2 text-white bg-neutral-800 px-4 py-2 rounded-full hover:bg-neutral-700 transition-colors">
                   <Youtube size={18} /> <span>YouTube</span>
                 </button> */}
-                <button
-                  onClick={() => {
-                    window.open(
-                      "https://www.instagram.com/imkate.mz/",
-                      "_blank",
-                    );
-                  }}
-                  className="flex items-center space-x-2 text-white bg-neutral-800 px-4 py-2 rounded-full hover:bg-neutral-700 transition-colors"
-                >
-                  <Instagram size={18} /> <span>Instagram</span>
-                </button>
-              </div>
+              <button
+                onClick={() => {
+                  window.open("https://www.instagram.com/imkate.mz/", "_blank");
+                }}
+                className="flex items-center space-x-2 text-white bg-neutral-800 px-4 py-2 rounded-full hover:bg-neutral-700 transition-colors"
+              >
+                <Instagram size={18} /> <span>Instagram</span>
+              </button>
             </div>
           </div>
         </div>
