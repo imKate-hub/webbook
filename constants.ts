@@ -49,5 +49,5 @@ export const NAV_LINKS = [
   { name: 'Home', path: '/' },
   { name: 'Explore Book Blog', path: '/blog' },
   { name: 'About Kate', path: '/about' },
-  { name: 'YouTube', path: '/youtube' },
+  // { name: 'YouTube', path: '/youtube' },
 ];

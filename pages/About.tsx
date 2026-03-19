@@ -1,14 +1,13 @@
 import React from "react";
 import { Instagram, Youtube } from "lucide-react";
 import { SiteConfig } from "../types";
-import kate from '../assets/images/kate.jpg'
+import kate from "../assets/images/kate.jpg";
 
 interface AboutProps {
   config: SiteConfig;
 }
 
 const About: React.FC<AboutProps> = ({ config }) => {
-
   return (
     <div className="min-h-screen bg-brand-black pt-32 pb-20">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -37,24 +36,42 @@ const About: React.FC<AboutProps> = ({ config }) => {
 
             <div className="text-neutral-300 space-y-4 leading-relaxed font-light text-lg">
               <p>
-                Mình là Bùi Thu Trang, bạn bè thường gọi mình là Kate. Hành
-                trình phát triển bản thân của mình bắt đầu từ năm 2023, khi mình
-                tìm đến những cuốn sách về tâm lý học. Việc đọc sách không chỉ
-                giúp mình hiểu người khác hơn, mà còn là cách để mình hiểu chính
-                mình, học cách lắng nghe cảm xúc và trưởng thành từ bên trong.
+                Chào bạn, mình là Kate, tên thật là Trang Thật ra trước đây mình
+                không phải là một người thích đọc sách. Mình khá lười đọc và
+                thường chọn những cách tiếp nhận thông tin nhanh hơn như nghe
+                podcast hay xem video. Nhưng mọi thứ bắt đầu thay đổi khi mình
+                tham gia một thử thách đọc sách 28 ngày để nhận thưởng. Ban đầu
+                chỉ là thử cho biết, nhưng càng đọc mình càng nhận ra giá trị
+                của việc đọc sách mang lại.
               </p>
               <p>
-                Cái tên Kate đến từ một câu chuyện rất đời thường trong gia
-                đình. Vì thể chất khá yếu, mẹ mình hay gọi vui là Kate — một
-                cách gọi rút gọn từ karate, như một lời nhắn nhủ dịu dàng rằng:
-                dù nhỏ bé, mình vẫn cần mạnh mẽ và kiên cường theo cách của
-                riêng mình.
+                So với podcast hay video, việc đọc sách giúp mình hiểu sâu hơn,
+                suy nghĩ chậm lại và nhìn nhận vấn đề rõ ràng hơn. Từ đó, mình
+                bắt đầu duy trì thói quen đọc sách, dù không phải lúc nào cũng
+                dễ dàng.
               </p>
               <p>
-                Mình tin rằng mỗi người đều có một hành trình riêng để trở nên
-                tốt hơn từng ngày. Với mình, hành trình ấy được nuôi dưỡng từ
-                sách, từ sự thấu hiểu tâm lý và từ những thay đổi nhỏ nhưng bền
-                bỉ mỗi ngày.
+                Website này được mình tạo ra như một không gian nhỏ để lưu lại
+                hành trình thay đổi của bản thân. Sau mỗi cuốn sách, mình viết
+                lại cảm nhận, những điều khiến mình ấn tượng và những bài học
+                mình rút ra. Mình hy vọng những chia sẻ này có thể giúp bạn hiểu
+                nhanh nội dung sách và tìm được cuốn phù hợp với mình.
+              </p>
+              <p>
+                Ở đây, mình thường review các thể loại như sách phát triển bản
+                thân, hồi ký, kinh tế và sách truyền cảm hứng. Những bài viết
+                không mang tính học thuật, mà chỉ đơn giản là góc nhìn cá nhân
+                của mình – một người từng không thích đọc sách nhưng đang cố
+                gắng duy trì thói quen này mỗi ngày.
+              </p>
+              <p>
+                Mình vẫn rất thích nghe podcast và xem video, nhưng mình tin
+                rằng đọc sách là một cách khác để hiểu thế giới sâu sắc hơn. Và
+                nếu bạn cũng giống mình trước đây – từng ngại đọc sách – thì hy
+                vọng bạn sẽ tìm thấy một chút động lực khi ghé thăm website này.
+              </p>
+              <p>
+                Rất vui nếu được đồng hành cùng bạn trên hành trình đọc sách
               </p>
             </div>
 
@@ -66,10 +83,18 @@ const About: React.FC<AboutProps> = ({ config }) => {
                 Kết nối với mình
               </h3>
               <div className="flex space-x-4">
-                <button className="flex items-center space-x-2 text-white bg-neutral-800 px-4 py-2 rounded-full hover:bg-neutral-700 transition-colors">
+                {/* <button className="flex items-center space-x-2 text-white bg-neutral-800 px-4 py-2 rounded-full hover:bg-neutral-700 transition-colors">
                   <Youtube size={18} /> <span>YouTube</span>
-                </button>
-                <button className="flex items-center space-x-2 text-white bg-neutral-800 px-4 py-2 rounded-full hover:bg-neutral-700 transition-colors">
+                </button> */}
+                <button
+                  onClick={() => {
+                    window.open(
+                      "https://www.instagram.com/imkate.mz/",
+                      "_blank",
+                    );
+                  }}
+                  className="flex items-center space-x-2 text-white bg-neutral-800 px-4 py-2 rounded-full hover:bg-neutral-700 transition-colors"
+                >
                   <Instagram size={18} /> <span>Instagram</span>
                 </button>
               </div>

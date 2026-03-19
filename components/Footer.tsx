@@ -51,9 +51,9 @@ const Footer: React.FC<FooterProps> = ({ config }) => {
                 <a href="https://www.instagram.com/imkate.mz/" className="text-neutral-400 hover:text-white transition-colors">
                   <Instagram size={24} />
                 </a>
-                <a href="/youtube" className="text-neutral-400 hover:text-white transition-colors">
+                {/* <a href="/youtube" className="text-neutral-400 hover:text-white transition-colors">
                   <Youtube size={24} />
-                </a>
+                </a> */}
              </div>
           </div>
         </div>

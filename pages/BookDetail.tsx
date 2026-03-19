@@ -88,7 +88,7 @@ const BookDetail: React.FC<BookDetailProps> = ({ books, config }) => {
 
         {/* Main Review Content */}
         <div className="prose prose-invert prose-orange max-w-none">
-          <div className="text-neutral-300 space-y-6 leading-loose text-lg font-light first-letter:text-5xl first-letter:font-serif first-letter:mr-3 first-letter:float-left first-letter:text-white">
+          <div className="text-neutral-300 space-y-6 leading-loose text-lg font-light first-letter:text-5xl first-letter:font-serif first-letter:mr-1 first-letter:float-left first-letter:text-white">
             {book.content.split('\n').map((paragraph, idx) => (
               <p key={idx}>{paragraph}</p>
             ))}
