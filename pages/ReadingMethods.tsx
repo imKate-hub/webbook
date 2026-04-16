@@ -64,7 +64,7 @@ export default function ReadingMethods() {
   return (
     <div className="w-full pb-24">
       {/* Header */}
-      <section className="bg-[#f97316] text-warm-white py-24">
+      <section className="bg-[#f97316] text-black py-24">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
