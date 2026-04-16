@@ -36,13 +36,13 @@ const About: React.FC<AboutProps> = ({ config }) => {
 
             <div className="text-neutral-300 space-y-4 leading-relaxed font-light text-lg">
               <p>
-                Chào bạn, mình là Kate, tên thật là Trang Thật ra trước đây mình
-                không phải là một người thích đọc sách. Mình khá lười đọc và
-                thường chọn những cách tiếp nhận thông tin nhanh hơn như nghe
-                podcast hay xem video. Nhưng mọi thứ bắt đầu thay đổi khi mình
-                tham gia một thử thách đọc sách 28 ngày để nhận thưởng. Ban đầu
-                chỉ là thử cho biết, nhưng càng đọc mình càng nhận ra giá trị
-                của việc đọc sách mang lại.
+                Kate chào bạn! Mình tên là Bùi Thu Trang, biệt danh là Kate.
+                Thật ra trước đây mình không phải là một người thích đọc sách.
+                Mình khá lười đọc và thường chọn những cách tiếp nhận thông tin
+                nhanh hơn như nghe podcast hay xem video. Nhưng mọi thứ bắt đầu
+                thay đổi khi mình tham gia một thử thách đọc sách 28 ngày để
+                nhận thưởng. Ban đầu chỉ là thử cho biết, nhưng càng đọc mình
+                càng nhận ra giá trị của việc đọc sách mang lại.
               </p>
               <p>
                 So với podcast hay video, việc đọc sách giúp mình hiểu sâu hơn,
@@ -53,7 +53,7 @@ const About: React.FC<AboutProps> = ({ config }) => {
             </div>
           </div>
         </div>
-        <div className='mt-3'>
+        <div className="mt-3">
           <div className="text-neutral-300 space-y-4 leading-relaxed font-light text-lg">
             <p>
               Website này được mình tạo ra như một không gian nhỏ để lưu lại

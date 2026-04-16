@@ -48,6 +48,8 @@ export const INITIAL_BOOKS: Book[] = [
 export const NAV_LINKS = [
   { name: 'Home', path: '/' },
   { name: 'Explore Book Blog', path: '/blog' },
+  { name: 'Read Hub', path: '/mediums' },
+  { name: 'Read Better', path: '/methods' },
   { name: 'About Kate', path: '/about' },
   // { name: 'YouTube', path: '/youtube' },
 ];
