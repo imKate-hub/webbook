@@ -6,7 +6,7 @@ export default function ReadingMethods() {
     {
       id: "syntopical",
       title: "Đọc Đồng Chủ Đề (Syntopical Reading)",
-      icon: <Layers className="w-6 h-6 text-olive" />,
+      icon: <Layers className="w-6 h-6 text-[#f97316]" />,
       description: "Cấp độ đọc cao nhất, nơi bạn đọc nhiều cuốn sách về cùng một chủ đề và so sánh các ý tưởng của chúng để đưa ra kết luận của riêng mình.",
       steps: [
         "Tạo danh mục các cuốn sách liên quan",
@@ -20,7 +20,7 @@ export default function ReadingMethods() {
     {
       id: "active",
       title: "Đọc Chủ Động (Active Reading)",
-      icon: <Brain className="w-6 h-6 text-olive" />,
+      icon: <Brain className="w-6 h-6 text-[#f97316]" />,
       description: "Đọc với một cây bút trên tay. Đây là một cuộc trò chuyện với tác giả, nơi bạn đặt câu hỏi, ghi chú và phản biện lại văn bản.",
       steps: [
         "Làm nổi bật các lập luận chính và luận điểm",
@@ -34,7 +34,7 @@ export default function ReadingMethods() {
     {
       id: "sq3r",
       title: "Phương Pháp SQ3R",
-      icon: <Target className="w-6 h-6 text-olive" />,
+      icon: <Target className="w-6 h-6 text-[#f97316]" />,
       description: "Một phương pháp tiếp cận có cấu trúc để đọc tài liệu giáo trình, đảm bảo mức độ hiểu và ghi nhớ cao.",
       steps: [
         "Khảo sát (Survey): Đọc lướt chương để có cái nhìn tổng quan",
@@ -48,7 +48,7 @@ export default function ReadingMethods() {
     {
       id: "inspectional",
       title: "Đọc Lướt Có Hệ Thống (Inspectional Reading)",
-      icon: <Zap className="w-6 h-6 text-olive" />,
+      icon: <Zap className="w-6 h-6 text-[#f97316]" />,
       description: "Đọc lướt có hệ thống để nắm bắt ý chính của một cuốn sách trong thời gian giới hạn trước khi quyết định đọc sâu.",
       steps: [
         "Đọc trang tiêu đề và lời tựa",
@@ -64,7 +64,7 @@ export default function ReadingMethods() {
   return (
     <div className="w-full pb-24">
       {/* Header */}
-      <section className="bg-olive text-warm-white py-24">
+      <section className="bg-[#f97316] text-warm-white py-24">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -94,7 +94,7 @@ export default function ReadingMethods() {
             >
               {/* Decorative background number */}
               <div className="absolute -top-10 -right-10 text-[200px] font-serif font-bold text-sand/20 leading-none select-none pointer-events-none">
-                0{index + 1}
+                {/* 0{index + 1} */}
               </div>
 
               <div className="relative z-10">
@@ -115,7 +115,7 @@ export default function ReadingMethods() {
                     <ul className="space-y-4">
                       {method.steps.map((step, i) => (
                         <li key={i} className="flex items-start">
-                          <span className="flex-shrink-0 w-6 h-6 rounded-full bg-olive/10 text-olive flex items-center justify-center text-xs font-medium mr-3 mt-0.5">
+                          <span className="flex-shrink-0 w-6 h-6 rounded-full bg-[#f97316]/10 text-[#f97316] flex items-center justify-center text-xs font-medium mr-3 mt-0.5">
                             {i + 1}
                           </span>
                           <span className="text-ink/80 leading-relaxed">{step}</span>
@@ -148,7 +148,7 @@ export default function ReadingMethods() {
           </p>
           <a 
             href="/reviews" 
-            className="inline-flex items-center justify-center px-8 py-4 bg-ink text-warm-white rounded-full hover:bg-olive transition-colors text-sm tracking-widest uppercase font-medium"
+            className="inline-flex items-center justify-center px-8 py-4 bg-ink text-warm-white rounded-full hover:bg-[#f97316] transition-colors text-sm tracking-widest uppercase font-medium"
           >
             Xem Bài Đánh Giá
           </a>
